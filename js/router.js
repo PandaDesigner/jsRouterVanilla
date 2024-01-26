@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', router);
 
 // Navegación al hacer clic en los enlaces
 document.addEventListener('click', (event) => {
-  console.log(event.target.tagName);
+  console.log(event);
 
   if (event.target.tagName === 'A') {
     event.preventDefault();
