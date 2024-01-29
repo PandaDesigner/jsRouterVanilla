@@ -3,21 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="src/output.css" rel="stylesheet">
     <title>AppBalance</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/">Balance</a></li>
-          <li><a href="/category">Category</a></li>
-          <li><a href="/reports">Reports</a></li>
-        </ul>
-      </nav>
+    <header class="w-full bg-[#3C44FF]" >
+      <div class = "container flex flex-row items-center justify-between h-16 px-4 mx-auto text-white md:px-0">
+        <div>
+          <p class="text-base md:text-2xl"><span class="font-extrabold ">App</span>|Balance</p>
+        </div>
+        <nav class="flex flex-row space-x-4 ">
+          
+            <a id="balance" href="/" class="text-indigo-400 hover:text-indigo-300">Balance</a>
+            <a id="category" href="/category" class="hover:text-indigo-300">Category</a>
+            <a id="reports" href="/reports" class=" hover:text-indigo-300">Reports</a>
+          
+        </nav>
+      </div>
     </header>
-    <div id="app"></div>
+    <div id="app" class=""></div>
 
     <script type="module" src="js/router.js" defer></script>
     <script type="module" src="js/app.js" defer></script>
+    <script src="js/db/dbBalance.js"></script>
+    <script type="module" src="js/db/db.js"></script>
   </body>
 </html>

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply pt-0 pb-2 px-4 bg-blue-500/80 backdrop-blur-sm text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+
+  .ocultar {
+    @apply hidden;
+  }
+}

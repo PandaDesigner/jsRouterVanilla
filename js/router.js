@@ -1,7 +1,7 @@
-// router.js
-import Balance from './pages/balance.js';
-import Reports from './pages/report.js';
-import Category from './pages/category.js';
+//NOTE - router.js
+import Balance from '../src/pages/balance.js';
+import Reports from '../src/pages/report.js';
+import Category from '../src/pages/category.js';
 
 const routes = {
   '/': Balance,
@@ -14,18 +14,15 @@ const router = async () => {
   const path = window.location.pathname;
 
   const route = routes[path] || Balance;
-
   content.innerHTML = await route();
 };
 
-// Navegación inicial
+//NOTE -  Navegación inicial
 window.addEventListener('popstate', router);
 document.addEventListener('DOMContentLoaded', router);
 
-// Navegación al hacer clic en los enlaces
+//NOTE - Navegación al hacer clic en los enlaces
 document.addEventListener('click', (event) => {
-  console.log(event);
-
   if (event.target.tagName === 'A') {
     event.preventDefault();
     const href = event.target.getAttribute('href');
