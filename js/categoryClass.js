@@ -1,5 +1,8 @@
 //SECTION -  CRUD Category
 
+const unaccentedText = (str) =>
+  str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
 class dbCategory {
   constructor() {
     this.arrDB = [];
@@ -19,7 +22,10 @@ class dbCategory {
     this.arrDB = [...this.arrDB, { category }];
   }
   deleteCategory(category) {
-    this.arrDB = this.arrDB.filter((item) => item.category !== category);
+    this.arrDB = this.arrDB.filter((item) => {
+      console.log(item.category.toLowerCase());
+      return unaccentedText(item.category.toLowerCase()) != category;
+    });
   }
   saveCategory() {
     localStorage.setItem('category', JSON.stringify(this.arrDB));

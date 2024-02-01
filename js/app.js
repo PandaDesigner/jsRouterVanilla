@@ -24,8 +24,8 @@ document.addEventListener('click', (event) => {
     document.getElementById('modal').classList.add('hidden');
   }
 
-  if (String(event.target.id).indexOf('-delete-category'))
-    console.log(event.target.id);
+  if (String(event.target.id).indexOf('-delete')) console.log(event.target.id);
+  console.log(arrayDbCategory.allCategory());
 });
 
 document.addEventListener('submit', (event) => {
